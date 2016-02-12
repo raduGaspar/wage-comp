@@ -1,0 +1,108 @@
+@import "compass/css3/user-interface";
+@import "compass/css3/border-radius";
+
+@mixin vh-center() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+
+@mixin argyle() {
+  background-color: #6d695c;
+  background-image:
+  repeating-linear-gradient(120deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
+  repeating-linear-gradient(60deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
+  linear-gradient(60deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1)),
+  linear-gradient(120deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1));
+  background-size: 70px 120px;
+}
+
+* {
+  @include user-select(none);
+}
+
+html, body {
+  background: #333;
+  font-family: Arial, Serif;
+  font-size: .95em;
+}
+
+$borderColor: #222;
+
+.wage-comp {
+  margin: 10px;
+
+  .input-group {
+    margin-bottom: 3px;
+
+    .form-control {
+      border-color: $borderColor;
+      border-width: 1px 1px 1px 0;
+    }
+
+    .input-group-addon {
+      min-width: 65px;
+      background: #fc0;
+      border-color: $borderColor;
+    }
+  }
+}
+
+.results {
+  position: relative;
+
+  p {
+    margin: 0;
+  }
+
+  .description {
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  .value {
+    font-weight: bold;
+    text-align: right;
+  }
+
+  &:hover {
+    .overlay {
+      display: none;
+    }
+  }
+
+  .list-group {
+    overflow: hidden;
+
+    .list-group-item {
+      padding: 5px 10px;
+    }
+  }
+
+  .overlay {
+    position: absolute;
+    color: #fff;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    font-weight: bold;
+    font-style: italic;
+
+    @include argyle();
+    @include border-top-right-radius(4px);
+    @include border-bottom-right-radius(4px);
+
+    &:after {
+      content: 'hover to see results';
+      @include vh-center();
+    }
+  }
+}
+
+.red {
+  color: #900;
+}
+.green {
+  color: #090;
+}

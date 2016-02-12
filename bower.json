@@ -1,0 +1,31 @@
+{
+  "name": "WageCalculator",
+  "version": "1.0.0",
+  "authors": [
+    "Radu Gaspar <radu.gaspar@evozon.com>"
+  ],
+  "description": "A simple interface for wage validation.",
+  "main": "app.js",
+  "keywords": [
+    "wage",
+    "validation",
+    "paycheck",
+    "salary",
+    "javascript"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "libs"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "jquery": "~2.1.4",
+    "angular": "~1.4.3",
+    "angular-route": "~1.4.3",
+    "components-font-awesome": "~4.3.0",
+    "angular-animate": "~1.4.3"
+  }
+}

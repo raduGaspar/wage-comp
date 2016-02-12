@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-us" ng-app="wagecomp" ng-strict-di>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WageComp</title>
+  <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="libs/components-font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <div ng-controller="AppMenuCtrl"></div>
+  <div class="wage-comp">
+    <div ng-view></div>
+  </div>
+
+  <!-- vendor -->
+  <script type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="libs/angular/angular.min.js"></script>
+  <script type="text/javascript" src="libs/angular-route/angular-route.min.js"></script>
+  <script type="text/javascript" src="libs/angular-animate/angular-animate.min.js"></script>
+
+  <!-- app -->
+  <script type="text/javascript" src="app/app.js"></script>
+  <script type="text/javascript" src="app/routes.js"></script>
+
+  <!-- directives -->
+  <script type="text/javascript" src="app/directives/validNumber.js"></script>
+
+  <!-- services -->
+  <script type="text/javascript" src="app/services/utils.js"></script>
+
+  <!-- controllers -->
+  <script type="text/javascript" src="app/controllers/appMenuCtrl.js"></script>
+  <script type="text/javascript" src="app/controllers/mainCtrl.js"></script>
+  <script type="text/javascript" src="app/controllers/billingCtrl.js"></script>
+  <script type="text/javascript" src="app/controllers/accessCtrl.js"></script>
+  <script type="text/javascript" src="app/controllers/analyticsCtrl.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<form>
+  <div class="input-group">
+    <span class="input-group-addon"><i class="fa fa-eur"></i></span>
+    <input type="password" ng-model="inpts.eur" class="form-control" placeholder="Wage in EUR" autofocus valid-number>
+    <span class="input-group-addon">Wage</span>
+  </div>
+  <div class="input-group">
+    <span class="input-group-addon">RON</span>
+    <input type="password" ng-model="inpts.crm" class="form-control" placeholder="Carte de Munca" valid-number>
+    <span class="input-group-addon">CM</span>
+  </div>
+  <div class="input-group">
+    <span class="input-group-addon"><i class="fa fa-exchange"></i></span>
+    <input type="text" ng-model="inpts.exr" class="form-control" placeholder="RON/EUR Exchange Rate" valid-number>
+    <span class="input-group-addon">XE</span>
+  </div>
+</form>
+<div class="results">
+  <ul class="list-group">
+    <li class="list-group-item" ng-repeat="item in results track by $index">
+      <div class="row">
+        <div class="col-xs-8">
+          <p class="description">{{ item.details }}</p>
+          <p ng-class="item.isTotal ? 'green' : 'red'">{{ item.title }}</p>
+        </div>
+        <div class="col-xs-4">
+          <p class="value" ng-class="item.isTotal ? 'green' : 'red'">
+            {{ item.value }}&nbsp;{{ item.currency }}
+          </p>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <div class="col-xs-offset-8 col-xs-4 overlay" ng-if="results"></div>
+</div>
